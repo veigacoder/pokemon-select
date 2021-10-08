@@ -1,4 +1,33 @@
-* {
-  margin: 0;
-  padding: 0;
+html {
+  margin:0px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 200;
+  font-size: 36px;
+}
+
+body {
+  margin:0px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 200;
+  font-size: 36px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+ 
+}
+
+::-webkit-scrollbar-track {
+  background: none; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 40px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  height: 2px;
+
 }
