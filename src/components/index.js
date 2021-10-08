@@ -1,1 +1,1 @@
-export { default as MainFrame } from './mainframe'
+export { default as Pokedex } from './pokedex'

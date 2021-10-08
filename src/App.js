@@ -1,10 +1,16 @@
-import { MainFrame } from './components'
+import { Pokedex } from './components'
+import { Main, MainBody, MainHeader } from './elements/main'
 
 const App = () => {
   return (
-    <>
-      <MainFrame />
-    </>
+    <Main>
+      <MainHeader>
+        Header
+      </MainHeader>
+      <MainBody>
+        <Pokedex />
+      </MainBody>
+    </Main>
   )
 }
 
