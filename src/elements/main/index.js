@@ -21,4 +21,5 @@ export const MainBody = styled.div`
 display: flex;
 justify-content: center;
 min-height: max-content;
+padding: 10px 0 10px 0;
 `

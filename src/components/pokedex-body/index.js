@@ -10,7 +10,7 @@ import {
   PokedexHeader,
   PokemonInfoAvatar
 } from '../../elements/pokedex-blocks'
-
+import 'nes.css/css/nes.min.css'
 import React, { useState } from 'react'
 
 export const PokedexInfo = () => {
@@ -20,9 +20,9 @@ export const PokedexInfo = () => {
 
   return (
     <>
-      <PokedexBody>
-        <PokemonInfo />
-        <PokedexDisplay>
+      <PokedexBody className='nes-container is-rounded '>
+        <PokemonInfo className='nes-container is-rounded' />
+        <PokedexDisplay className='nes-container is-rounded'>
           <List>
             <ListItem>
               {name}
@@ -33,13 +33,12 @@ export const PokedexInfo = () => {
             </ListItem>
 
           </List>
-          <PokedexDisplayPhoto>
+          <PokedexDisplayPhoto className='nes-container is-rounded'>
             <img
               src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1200px-Pok%C3%A9_Ball_icon.svg.png'
               width='100%'
             />
           </PokedexDisplayPhoto>
-
         </PokedexDisplay>
       </PokedexBody>
     </>

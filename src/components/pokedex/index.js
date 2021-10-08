@@ -4,16 +4,15 @@ import {
   PokedexBody,
   Circle
 } from '../../elements/pokedex-blocks'
+import 'nes.css/css/nes.min.css'
 
 import { PokedexInfo } from '../pokedex-body'
 
 export const Pokedex = () => {
   return (
-    <PokedexBase>
+    <PokedexBase className='nes-container is-rounded'>
       <PokedexHeader>
-        <svg height='50' width='50'>
-          <circle cx='25' cy='25' r='20' fill='cyan' />
-        </svg>
+
         Pokédexicon
       </PokedexHeader>
       <PokedexInfo />
