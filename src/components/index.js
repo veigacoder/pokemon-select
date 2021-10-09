@@ -1,1 +1,1 @@
-export { default as Pokedex } from './pokedex'
+export { default as PokedexInfo } from './pokedex-pokemon-info'
