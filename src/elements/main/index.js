@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 export const Main = styled.div`
 background-color: #b0b0b0;
-min-height: max-content;
-height: 100%;
+height: max-content;
+min-height: 100vh;
 width: 100%;
 top:0px;
 right:0px;
@@ -22,4 +22,5 @@ display: flex;
 justify-content: center;
 min-height: max-content;
 padding: 10px 0 10px 0;
+height: 100%;
 `
