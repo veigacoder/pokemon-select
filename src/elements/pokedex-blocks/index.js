@@ -105,14 +105,17 @@ export const Table = styled.table`
 color: #212121;
 font-size: 14px;
 height: max-content;
+align-items: center;
+justify-content: center;
 `
 export const TableItem = styled.td`
 
 display: flex;
 justify-content: center;
 align-items: center;
-text-align: center;
-align-self: center;
+text-align: left;
+font-size: 12px;
+text-transform: uppercase;
 `
 
 export const PokedexPokemonSearcher = styled.input`
@@ -138,6 +141,7 @@ export const PokedexPokemonAvatar = styled.div`
   font-size: 10px;
   height: 20%;
   width: auto;
+  text-transform: uppercase;
   transition: all 300ms cubic-bezier(.27,1.16,.81,-0.14);
 }
 :hover {

@@ -14,13 +14,14 @@ import axios, { Axios } from 'axios'
 
 export const PokedexInfo = () => {
   const [pokes, setPokes] = useState([])
-  const [name, setName] = useState('Choose a pokémon')
   const [abilities, setAbilities] = useState([])
-  const [photo, setPhoto] = useState('')
+  const [type, setType] = useState([])
+  const [name, setName] = useState('Choose a pokémon')
+  const [photo, setPhoto] = useState(null)
 
   const GetPokemon = async () => {
     try {
-      const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=101')
+      const response = await axios.get('https://pokeapi.co/api/v2/pokemon?offset=')
       setPokes(response.data.results)
     } catch (err) {
       console.log(err)
@@ -35,24 +36,31 @@ export const PokedexInfo = () => {
           axios.get(`https://pokeapi.co/api/v2/pokemon/${item.name}`)
             .then(res => {
               setAbilities(res.data.abilities)
+              setType(res.data.types)
+              console.log(type)
               setPhoto(res.data.sprites.front_default)
               console.log(res)
             })
         }}
       >
-        {item.name.toUpperCase()}
+        {item.name}
       </PokedexPokemonAvatar>
     )
   }
   const RenderItem = (item) => {
     return (
       <TableItem className='nes-container is-rounded'>
-        {item.ability.name.toUpperCase()}
+        {item.ability.name}
       </TableItem>
     )
   }
-  const random = Math.floor(Math.random(pokes.length))
-
+  const RenderType = (item) => {
+    return (
+      <TableItem className='nes-container is-rounded'>
+        {item.type.name}
+      </TableItem>
+    )
+  }
   useEffect(() => {
     GetPokemon()
   }, [])
@@ -74,8 +82,18 @@ export const PokedexInfo = () => {
           </tr>
           <tr>
             <PokedexDisplayPhoto className='nes-container is-rounded'>
-              <img src={photo} width='100%' />
+              <img src={photo} width='100%' height='100%' />
             </PokedexDisplayPhoto>
+          </tr>
+        </Table>
+        <Table>
+          <tr>
+            <TableItem>
+              TYPE
+            </TableItem>
+          </tr>
+          <tr>
+            {type.map(RenderType)}
           </tr>
         </Table>
         <Table>
