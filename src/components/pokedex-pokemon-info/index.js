@@ -2,15 +2,18 @@ import {
   PokedexDisplay1,
   PokedexDisplay2,
   PokedexDisplayPhoto,
+  PokedexDisplayPokemons,
+  PokedexPokemonAvatar,
+  PokedexPokemonSearcher,
+  PokedexPokemonType,
   Table,
   TableItem,
-  PokedexPokemonSearcher,
-  PokedexDisplayPokemons,
-  PokedexPokemonAvatar
+  TableRow
 } from '../../elements/pokedex-blocks'
 import 'nes.css/css/nes.min.css'
 import React, { useState, useEffect } from 'react'
 import axios, { Axios } from 'axios'
+import { typeColors } from '../../assets/colors'
 
 export const PokedexInfo = () => {
   const [pokes, setPokes] = useState([])
@@ -49,16 +52,28 @@ export const PokedexInfo = () => {
   }
   const RenderItem = (item) => {
     return (
-      <TableItem className='nes-container is-rounded'>
+      <PokedexPokemonAvatar className='nes-container is-rounded'>
         {item.ability.name}
-      </TableItem>
+      </PokedexPokemonAvatar>
+
     )
   }
   const RenderType = (item) => {
+    const chooseType = () => {
+      if (item.type.name === 'bug') return typeColors.bug
+      if (item.type.name === 'fight') return typeColors.fight
+      if (item.type.name === 'fire') return typeColors.fire
+      if (item.type.name === 'flying') return typeColors.flying
+      if (item.type.name === 'grass') return typeColors.grass
+      if (item.type.name === 'ground') return typeColors.ground
+      if (item.type.name === 'normal') return typeColors.normal
+      if (item.type.name === 'poison') return typeColors.poison
+      if (item.type.name === 'water') return typeColors.water
+    }
     return (
-      <TableItem className='nes-container is-rounded'>
+      <PokedexPokemonType className='nes-container is-rounded ' type={chooseType}>
         {item.type.name}
-      </TableItem>
+      </PokedexPokemonType>
     )
   }
   useEffect(() => {
@@ -75,36 +90,29 @@ export const PokedexInfo = () => {
       </PokedexDisplay1>
       <PokedexDisplay2 className='nes-container is-rounded'>
         <Table>
-          <tr>
+          <TableRow>
             <TableItem>
               {name.toUpperCase()}
             </TableItem>
-          </tr>
-          <tr>
+          </TableRow>
+          <TableRow>
             <PokedexDisplayPhoto className='nes-container is-rounded'>
               <img src={photo} width='100%' height='100%' />
             </PokedexDisplayPhoto>
-          </tr>
-        </Table>
-        <Table>
-          <tr>
-            <TableItem>
-              TYPE
-            </TableItem>
-          </tr>
-          <tr>
+          </TableRow>
+          <TableRow>
             {type.map(RenderType)}
-          </tr>
+          </TableRow>
         </Table>
+        <Table />
         <Table>
-          <tr>
+          <TableRow>
             <TableItem>
               ABILITIES
             </TableItem>
-          </tr>
-          <tr>
-            {abilities.map(RenderItem)}
-          </tr>
+          </TableRow>
+          {abilities.map(RenderItem)}
+
         </Table>
 
       </PokedexDisplay2>
