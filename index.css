@@ -1,0 +1,25 @@
+body {
+  margin:0px;
+  font-family: 'Press Start 2P', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+ margin: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: none; 
+  overflow: hidden;
+  width: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+
+}
+
