@@ -20,7 +20,7 @@ export const PokedexInfo = () => {
   const [abilities, setAbilities] = useState([])
   const [type, setType] = useState([])
   const [name, setName] = useState('Choose a pokémon')
-  const [photo, setPhoto] = useState(null)
+  const [photo, setPhoto] = useState('https://toppng.com/public/uploads/thumbnail/okeball-pokemon-pixel-8-bit-gif-1156299108871jc8sofbw.png')
 
   const GetPokemon = async () => {
     try {
