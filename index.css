@@ -23,3 +23,7 @@ body {
 
 }
 
+img {
+  outline: none;
+  border: none;
+}
