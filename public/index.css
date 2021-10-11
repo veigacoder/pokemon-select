@@ -5,12 +5,13 @@ body {
 
 ::-webkit-scrollbar {
   width: 10px;
- 
+ margin: 10px;
 }
 
 ::-webkit-scrollbar-track {
   background: none; 
-  padding: none;
+  overflow: hidden;
+  width: 20px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -22,3 +23,7 @@ body {
 
 }
 
+img {
+  outline: none;
+  border: none;
+}

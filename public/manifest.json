@@ -1,6 +1,6 @@
 {
-  "short_name": "Pokédexicon",
-  "name": "Pokémon Lexicon",
+  "short_name": "Pokélect",
+  "name": "Pokémon Catalect",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
