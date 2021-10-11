@@ -22,7 +22,7 @@ const App = () => {
       <MainBody>
         <PokedexBase className='nes-container is-rounded'>
           <PokedexHeader>
-            Pokédexicon v1.0
+            Pokémon Catalect v1.0
           </PokedexHeader>
           <PokedexBody className='nes-container is-rounded'>
             <PokedexInfo />
