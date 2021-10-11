@@ -73,25 +73,25 @@ min-width: 100px;
 export const PokedexDisplayPhoto = styled.div`
 color: wheat;
 background-color: gray;
-height: 40px;
-width:  40px;
+height: 128px;
+width:  128px;
 background-size: 200px;
 overflow: none;
+align-self: center;
+
 &&{
   padding: 0;
 }
 `
 export const PokedexDisplayPokemons = styled.div`
 background-color:#C9C9C9;
-width:  100%;
 height: 100%;
-overflow-x: hidden;
 overflow-y: scroll;
-
-display: flex;
-flex-wrap: wrap;
-grid-gap: 20px;
-
+overflow-x: hidden;
+contain: content;
+display: grid;
+grid-template-columns: repeat(3,1fr);
+grid-gap: 10px;
 
 &&{
   padding: 10px;
@@ -99,26 +99,29 @@ grid-gap: 20px;
 }
 `
 export const Table = styled.table`
-text-decoration: none;
-outline: none;
-list-style: none;
 color: #212121;
 font-size: 14px;
-padding: 0;
+height: max-content;
 `
 export const TableItem = styled.td`
-margin: none;
+
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+align-self: center;
 `
 
 export const PokedexPokemonSearcher = styled.input`
 &&{
-  width: 50%;
+
   height: 8px;
   outline: none;
   font-size: 16px;
   padding: 20px;
   background-color: #C9C9C9;
   border-color: black;
+  text-transform: uppercase;
 }
 `
 export const PokedexPokemonAvatar = styled.div`
@@ -126,10 +129,11 @@ export const PokedexPokemonAvatar = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80px;
-  height: 80px;
+  align-self: center;
+  min-height: max-content;
   background-color: #D9D9D9;
   font-size: 10px;
+  height: 20%;
   transition: all 300ms cubic-bezier(.27,1.16,.81,-0.14);
 }
 :hover {
