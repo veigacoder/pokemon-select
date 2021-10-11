@@ -1,7 +1,7 @@
 # **POKÉMON CATALECT**
 
 #### A web app for Pokémon's Pokédex
-Enjoy it at [GitHub Pages](https://github.com/user/repo/blob/branch/other_file.md)
+Enjoy it at [GitHub Pages](https://veigacoder.github.io/pokemon-catalect/)
 
 <br />
 
