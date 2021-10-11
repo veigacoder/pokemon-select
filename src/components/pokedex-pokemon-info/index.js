@@ -16,10 +16,11 @@ export const PokedexInfo = () => {
   const [pokes, setPokes] = useState([])
   const [name, setName] = useState('Choose a pokémon')
   const [abilities, setAbilities] = useState([])
+  const [photo, setPhoto] = useState('')
 
   const GetPokemon = async () => {
     try {
-      const response = await axios.get('https://pokeapi.co/api/v2/pokemon')
+      const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=101')
       setPokes(response.data.results)
     } catch (err) {
       console.log(err)
@@ -34,6 +35,8 @@ export const PokedexInfo = () => {
           axios.get(`https://pokeapi.co/api/v2/pokemon/${item.name}`)
             .then(res => {
               setAbilities(res.data.abilities)
+              setPhoto(res.data.sprites.front_default)
+              console.log(res)
             })
         }}
       >
@@ -48,6 +51,7 @@ export const PokedexInfo = () => {
       </TableItem>
     )
   }
+  const random = Math.floor(Math.random(pokes.length))
 
   useEffect(() => {
     GetPokemon()
@@ -56,10 +60,9 @@ export const PokedexInfo = () => {
   return (
     <>
       <PokedexDisplay1 className='nes-container is-rounded'>
-        <PokedexPokemonSearcher className='nes-input is-rounded' />
+        <PokedexPokemonSearcher className='nes-input is-rounded' placeholder='try it' />
         <PokedexDisplayPokemons className='nes-container is-rounded'>
           {pokes.map(RenderPokemon)}
-
         </PokedexDisplayPokemons>
       </PokedexDisplay1>
       <PokedexDisplay2 className='nes-container is-rounded'>
@@ -70,7 +73,9 @@ export const PokedexInfo = () => {
             </TableItem>
           </tr>
           <tr>
-            <PokedexDisplayPhoto className='nes-container is-rounded' />
+            <PokedexDisplayPhoto className='nes-container is-rounded'>
+              <img src={photo} width='100%' />
+            </PokedexDisplayPhoto>
           </tr>
         </Table>
         <Table>
