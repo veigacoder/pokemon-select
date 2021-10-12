@@ -24,7 +24,7 @@ export const PokedexInfo = () => {
 
   const GetPokemon = async () => {
     try {
-      const response = await axios.get('https://pokeapi.co/api/v2/pokemon?offset=')
+      const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=1000')
       setPokes(response.data.results)
     } catch (err) {
       console.log(err)
@@ -61,13 +61,22 @@ export const PokedexInfo = () => {
   const RenderType = (item) => {
     const chooseType = () => {
       if (item.type.name === 'bug') return typeColors.bug
-      if (item.type.name === 'fight') return typeColors.fight
+      if (item.type.name === 'dark') return typeColors.dark
+      if (item.type.name === 'dragon') return typeColors.dragon
+      if (item.type.name === 'electric') return typeColors.electric
+      if (item.type.name === 'fairy') return typeColors.fairy
+      if (item.type.name === 'fighting') return typeColors.fight
       if (item.type.name === 'fire') return typeColors.fire
       if (item.type.name === 'flying') return typeColors.flying
       if (item.type.name === 'grass') return typeColors.grass
       if (item.type.name === 'ground') return typeColors.ground
+      if (item.type.name === 'ice') return typeColors.ice
+      if (item.type.name === 'ghost') return typeColors.ghost
       if (item.type.name === 'normal') return typeColors.normal
       if (item.type.name === 'poison') return typeColors.poison
+      if (item.type.name === 'psychic') return typeColors.psychic
+      if (item.type.name === 'rock') return typeColors.rock
+      if (item.type.name === 'steel') return typeColors.steel
       if (item.type.name === 'water') return typeColors.water
     }
     return (
