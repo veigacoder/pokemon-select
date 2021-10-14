@@ -4,7 +4,7 @@ export const typeColors = {
   dragon: '#6431B7',
   electric: '#D1AF51',
   fairy: '#E196CB',
-  fight: '#B33131',
+  fighting: '#B33131',
   fire: '#D74242',
   flying: '#C46CA5',
   ghost: '#7259E3',
@@ -15,6 +15,6 @@ export const typeColors = {
   poison: '#8F51D2',
   psychic: '#D268B2',
   rock: '#A17E50',
-  steel: '#D0CECF',
+  steel: '#D3FEFF',
   water: '#5966E3'
 }
