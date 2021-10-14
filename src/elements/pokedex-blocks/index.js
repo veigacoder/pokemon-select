@@ -96,12 +96,11 @@ align-self: center;
 export const PokedexDisplayPokemons = styled.div`
 background-color:#C9C9C9;
 width: 100%;
-overflow-y: scroll;
-overflow-x: hidden;
 contain: content;
 display: grid;
 grid-template-columns: repeat(3,1fr);
 grid-gap: 20px;
+
 &&{
   padding: 10px;
   margin: 20px 0 0 0 ;
@@ -111,23 +110,28 @@ grid-gap: 20px;
 }}
 `
 export const Table = styled.table`
-color: #212121;
-font-size: 14px;
-height: max-content;
-align-items: center;
-justify-content: center;
-width: 100%;
+&&{
+  color: #212121;
+  font-size: 14px;
+  height: max-content;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
 @media (max-width: 1000px){
   font-size: 10px;
   } 
 `
 export const TableItem = styled.td`
-display: flex;
-justify-content: center;
-align-items: center;
-text-align: center;
-font-size: 12px;
-text-transform: uppercase;
+&& {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
 @media (max-width: 1000px){
   font-size: 10px;
   } 
