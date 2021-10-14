@@ -12,20 +12,23 @@ import {
 } from '../../elements/pokedex-blocks'
 import 'nes.css/css/nes.min.css'
 import React, { useState, useEffect } from 'react'
-import axios, { Axios } from 'axios'
+import axios from 'axios'
 import { typeColors } from '../../assets/colors'
 
 export const PokedexInfo = () => {
-  const [pokes, setPokes] = useState([])
+  const [pokemons, setPokemons] = useState([])
   const [abilities, setAbilities] = useState([])
   const [type, setType] = useState([])
-  const [name, setName] = useState('Choose a pokémon')
-  const [photo, setPhoto] = useState('https://toppng.com/public/uploads/thumbnail/okeball-pokemon-pixel-8-bit-gif-1156299108871jc8sofbw.png')
+  const [name, setName] = useState('')
+  const [photo, setPhoto] = useState('')
+  const [atualOffset, setOffset] = useState(0)
 
-  const GetPokemon = async () => {
+  const BASE_ROUTE = 'https://pokeapi.co/api/v2/'
+
+  const GetPokemon = async (limit, offset) => {
     try {
-      const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=1000')
-      setPokes(response.data.results)
+      const response = await axios.get(`${BASE_ROUTE}pokemon?limit=${limit}&offset=${offset}`)
+      setPokemons(response.data.results)
     } catch (err) {
       console.log(err)
     }
@@ -36,13 +39,12 @@ export const PokedexInfo = () => {
       <PokedexPokemonAvatar
         className='nes-container is-rounded' onClick={() => {
           setName(item.name)
-          axios.get(`https://pokeapi.co/api/v2/pokemon/${item.name}`)
+          axios.get(`${BASE_ROUTE}pokemon/${item.name}`)
             .then(res => {
+              console.log(res.data)
               setAbilities(res.data.abilities)
               setType(res.data.types)
-              console.log(type)
               setPhoto(res.data.sprites.front_default)
-              console.log(res)
             })
         }}
       >
@@ -60,24 +62,48 @@ export const PokedexInfo = () => {
   }
   const RenderType = (item) => {
     const chooseType = `${typeColors[item.type.name]}`
-    console.log(chooseType)
     return (
       <PokedexPokemonType className='nes-container is-rounded ' type={chooseType}>
         {item.type.name}
       </PokedexPokemonType>
     )
   }
+  const changePlus = () => {
+    setOffset(atualOffset + 21)
+    GetPokemon(21, atualOffset + 21)
+    console.log(atualOffset)
+  }
+  const changeMinus = () => {
+    if (atualOffset !== 0) {
+      setOffset(atualOffset - 21)
+      GetPokemon(21, atualOffset - 21)
+    }
+  }
+  const changeHome = () => {
+    setOffset(0)
+    GetPokemon(21, 0)
+  }
+
   useEffect(() => {
-    GetPokemon()
+    GetPokemon(21, atualOffset)
   }, [])
 
   return (
     <>
       <PokedexDisplay1 className='nes-container is-rounded'>
-        <PokedexPokemonSearcher className='nes-input is-rounded' placeholder='try it' />
+        <PokedexPokemonSearcher className='nes-input is-rounded' placeholder='ditto' />
         <PokedexDisplayPokemons className='nes-container is-rounded'>
-          {pokes.map(RenderPokemon)}
+          {pokemons.map(RenderPokemon)}
         </PokedexDisplayPokemons>
+        <TableRow>
+          <PokedexPokemonAvatar
+            onClick={changeHome}
+            className='nes-container '
+          >home
+          </PokedexPokemonAvatar>
+          <PokedexPokemonAvatar onClick={changeMinus} className='nes-container'>{'<'}</PokedexPokemonAvatar>
+          <PokedexPokemonAvatar onClick={changePlus} className='nes-container '>{'>'}</PokedexPokemonAvatar>
+        </TableRow>
       </PokedexDisplay1>
       <PokedexDisplay2 className='nes-container is-rounded'>
         <Table>
@@ -105,7 +131,13 @@ export const PokedexInfo = () => {
           {abilities.map(RenderItem)}
 
         </Table>
+        <Table>
 
+          <PokedexPokemonAvatar>
+            Shiny
+          </PokedexPokemonAvatar>
+
+        </Table>
       </PokedexDisplay2>
     </>
   )
