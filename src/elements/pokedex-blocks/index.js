@@ -66,6 +66,7 @@ export const PokedexDisplay2 = styled.div`
 background-color: #D9D9D9;
   display:flex;
   text-align: left;
+  justify-content: center;
   padding: 10px;
   width: 50%;
   padding: 5px;
@@ -76,9 +77,9 @@ background-color: #D9D9D9;
 }
 
 `
-export const PokedexDisplayPhoto = styled.div`
+export const DisplayPhoto = styled.div`
 color: wheat;
-background-color: gray;
+background-color: #A9A9A9;
 height: 128px;
 width:  128px;
 background-size: 200px;
@@ -93,8 +94,8 @@ align-self: center;
   } 
 }
 `
-export const PokedexDisplayPokemons = styled.div`
-background-color:#C9C9C9;
+export const DisplayPokemons = styled.div`
+background-color:#B9B9B9;
 width: 100%;
 contain: content;
 display: grid;
@@ -105,8 +106,9 @@ grid-gap: 20px;
   padding: 10px;
   margin: 20px 0 0 0 ;
 
-@media (max-width: 1000px){
-  grid-template-columns: 1fr;
+@media (max-width: 600px){
+  
+  overflow-x: scroll;
 }}
 `
 export const Table = styled.table`
@@ -114,8 +116,6 @@ export const Table = styled.table`
   color: #212121;
   font-size: 14px;
   height: max-content;
-  align-items: center;
-  justify-content: center;
   width: 100%;
 }
 @media (max-width: 1000px){
@@ -130,13 +130,14 @@ export const TableItem = styled.td`
   text-align: center;
   font-size: 12px;
   text-transform: uppercase;
+  padding: 15px 5px 15px 5px;
 }
 
 @media (max-width: 1000px){
   font-size: 10px;
   } 
 `
-export const TableRow = styled.tr`
+export const Row = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
@@ -145,19 +146,20 @@ text-align: center;
   font-size: 10px;
   } 
 `
-export const PokedexPokemonSearcher = styled.input`
+export const PokemonSearcher = styled.input`
 &&{
-  width:30%;
+  width:100%;
   height: 8px;
   outline: none;
-  font-size: 14px;
-  padding: 20px;
+  text-align: left;
+  font-size: 12px;
+  padding: 10px;
   background-color: #C9C9C9;
   border-color: black;
   text-transform: uppercase;
 }
 `
-export const PokedexPokemonAvatar = styled.div`
+export const DisplayButton = styled.div`
 &&{
   display: flex;
   justify-content: center;
@@ -170,7 +172,7 @@ export const PokedexPokemonAvatar = styled.div`
   height: auto;
   width: auto;
   text-transform: uppercase;
-  transition: all 300ms cubic-bezier(.27,1.16,.81,-0.14);
+  transition: all 300ms cubic-bezier(.27,1.16,0.1,-0.14);
   @media (max-width: 1000px){
   font-size: 6px;
   padding: 5px;
@@ -182,7 +184,33 @@ export const PokedexPokemonAvatar = styled.div`
 }
 
 `
-export const PokedexPokemonType = styled.div.attrs(props => ({
+export const ActionButton = styled.div`
+&&{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  min-height: max-content;
+  background-color: #D9D9D9;
+  font-size: 8px;
+  padding: .5rem;
+  height: auto;
+  width: auto;
+  text-transform: uppercase;
+  margin: 20px 10px 10px 10px;
+  transition: all 300ms cubic-bezier(.27,1.16,0.1,-0.14);
+  @media (max-width: 1000px){
+  font-size: 6px;
+  padding: 5px;
+  } 
+}
+:hover {
+  background-color: #222;
+  color: #D9D9D9;
+}
+`
+
+export const PokemonType = styled.div.attrs(props => ({
   type: props.type || '#D9D9D9'
 
 }))`
@@ -191,13 +219,13 @@ export const PokedexPokemonType = styled.div.attrs(props => ({
   justify-content: center;
   align-items: center;
   align-self: center;
+  color: #121212;
   background-color: ${props => props.type};
   font-size: 8px;
   padding: 5px;
   height: max-content;
   width: max-content;
   text-transform: uppercase;
-  transition: all 300ms cubic-bezier(.27,1.16,.81,-0.14);
   margin: 10px;
 }
 

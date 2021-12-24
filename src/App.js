@@ -16,9 +16,7 @@ import {
 const App = () => {
   return (
     <Main>
-      <MainHeader>
-        Main header at app
-      </MainHeader>
+      <MainHeader />
       <MainBody>
         <PokedexBase className='nes-container is-rounded'>
           <PokedexHeader>

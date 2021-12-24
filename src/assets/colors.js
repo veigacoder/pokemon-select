@@ -6,7 +6,7 @@ export const typeColors = {
   fairy: '#E196CB',
   fighting: '#B33131',
   fire: '#D74242',
-  flying: '#C46CA5',
+  flying: '#C46CA2',
   ghost: '#7259E3',
   grass: '#8ED387',
   ground: '#E3A759',
