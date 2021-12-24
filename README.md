@@ -1,4 +1,4 @@
-# **POKÉMON CATALECT**
+# **POKÉMON SELECT**
 
 #### A web app for Pokémon's Pokédex
 Enjoy it at [GitHub Pages](https://veigacoder.github.io/pokemon-catalect/)
