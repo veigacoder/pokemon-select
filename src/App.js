@@ -26,9 +26,7 @@ const App = () => {
             <PokedexInfo />
           </PokedexBody>
         </PokedexBase>
-
       </MainBody>
-
     </Main>
   )
 }

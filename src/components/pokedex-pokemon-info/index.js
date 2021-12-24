@@ -1,17 +1,11 @@
 import 'nes.css/css/nes.min.css'
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
 
 export const PokedexInfo = (props) => {
-  useEffect(() => {
-
-  }, [])
-
   return (
-    <div />
+    <div>
+      Working
+    </div>
   )
 }
 
-export default {
-  PokedexInfo
-}
+export default PokedexInfo
