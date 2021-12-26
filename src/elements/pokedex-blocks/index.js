@@ -4,9 +4,9 @@ export const PokedexBase = styled.div`
 display: flex;
 flex-direction: column;
 margin-top: 10px;
-background-color: #D64747;
+background-color: #9E4949;
 width: 100%;
-height: 100%;
+height: 500px;
 position: relative;
 &&{ 
   padding: 10px;
@@ -32,7 +32,7 @@ display: flex;
 justify-content: center ;
 background-color: #AB4C4C;
 text-align: center;
-height: auto;
+height: 100%;
 &&{ 
   padding: 10px;
   @media (max-width: 1000px){
@@ -43,13 +43,14 @@ height: auto;
 
 export const PokedexDisplay1 = styled.div`
 &&{ 
-  background-color: #D9D9D9;
+  background-color: #CCC;
   display: flex;
-  flex-direction: column;
   position: static;
   align-items: center;
+  flex-wrap: wrap;
   padding: 10px;
   width: 50%;
+  max-width: 50%;
   height: auto;
   padding: 5px 10px 10px 10px;
   margin: 15px;
@@ -63,7 +64,7 @@ export const PokedexDisplay1 = styled.div`
 
 export const PokedexDisplay2 = styled.div`
 &&{ 
-background-color: #D9D9D9;
+background-color: #CCC;
   display:flex;
   text-align: left;
   justify-content: center;
@@ -96,7 +97,7 @@ align-self: center;
 `
 export const DisplayPokemons = styled.div`
 background-color:#B9B9B9;
-width: 100%;
+
 contain: content;
 display: grid;
 grid-template-columns: repeat(3,1fr);

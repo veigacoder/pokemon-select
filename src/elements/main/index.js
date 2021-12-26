@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Main = styled.div`
-background-color: #b0b0b0;
+background-color: #2C2C2C;
 height: max-content;
 min-height: 100%;
 width: 100%;
@@ -13,7 +13,7 @@ position: absolute;
 `
 
 export const MainHeader = styled.div`
-background-color: #dedede;
+background-color: #1C1C1C;
 height: 100px;
 width: 100%;
 `
