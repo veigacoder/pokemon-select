@@ -1,5 +1,5 @@
 import 'nes.css/css/nes.min.css'
-import React, { Component, useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { DisplayButton, Table } from '../../elements/pokedex-blocks'
@@ -12,15 +12,14 @@ export const Pokemons = () => {
 
   useEffect(() => {
     getPokemons()
+    console.log(pokemon)
   }, [])
   return (
+
     <Table>
-      {pokemon.map(p =>
-        <DisplayButton>
-          {p.name}
-        </DisplayButton>
-      )}
+      {pokemon.map(p => <DisplayButton>{p.name}</DisplayButton>)}
     </Table>
+
   )
 }
 

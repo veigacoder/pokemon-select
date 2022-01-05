@@ -12,7 +12,7 @@ export const getPokemons = () => async dispatch => {
   } catch (e) {
     dispatch({
       type: POKEMONS_ERROR,
-      payload: console.log(e)
+      payload: [{}]
     })
   }
 }
