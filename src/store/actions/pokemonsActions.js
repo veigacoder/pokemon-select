@@ -3,7 +3,7 @@ import axios from 'axios'
 
 export const getPokemons = () => async dispatch => {
   try {
-    const res = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=1')
+    const res = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=9')
     dispatch({
       type: GET_POKEMONS,
       payload: res.data.results
