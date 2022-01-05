@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/pokemon-select/static/css/main.a1a81f16.css",
-    "main.js": "/pokemon-select/static/js/main.dfadd692.js",
+    "main.js": "/pokemon-select/static/js/main.ab522566.js",
     "index.html": "/pokemon-select/index.html",
     "main.a1a81f16.css.map": "/pokemon-select/static/css/main.a1a81f16.css.map",
-    "main.dfadd692.js.map": "/pokemon-select/static/js/main.dfadd692.js.map"
+    "main.ab522566.js.map": "/pokemon-select/static/js/main.ab522566.js.map"
   },
   "entrypoints": [
     "static/css/main.a1a81f16.css",
-    "static/js/main.dfadd692.js"
+    "static/js/main.ab522566.js"
   ]
 }
