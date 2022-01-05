@@ -11,7 +11,7 @@ import {
   MainBody,
   MainHeader
 } from './elements/main'
-import Pokemons from './components/pokemon-info/index'
+import Pokemons from './components/pokemon-list/index'
 
 const App = () => {
   return (
