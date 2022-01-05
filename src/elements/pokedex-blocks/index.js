@@ -43,7 +43,7 @@ height: 100%;
 
 export const PokedexDisplay1 = styled.div`
 &&{ 
-  background-color: #CCC;
+  background-color: #e0d8c0;
   display: flex;
   position: static;
   align-items: center;
@@ -64,7 +64,7 @@ export const PokedexDisplay1 = styled.div`
 
 export const PokedexDisplay2 = styled.div`
 &&{ 
-background-color: #CCC;
+background-color: #e0d8c0;
   display:flex;
   text-align: left;
   justify-content: center;
@@ -112,11 +112,12 @@ grid-gap: 20px;
   overflow-x: scroll;
 }}
 `
-export const Table = styled.table`
+export const Table = styled.div`
 &&{
   color: #212121;
   font-size: 14px;
-  height: max-content;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   width: 100%;
 }
 @media (max-width: 1000px){
@@ -167,9 +168,10 @@ export const DisplayButton = styled.div`
   align-items: center;
   align-self: center;
   min-height: max-content;
-  background-color: #D9D9D9;
+  background-color: #c0b088;
   font-size: 8px;
   padding: .5rem;
+  margin: .5rem;
   height: auto;
   width: auto;
   text-transform: uppercase;
@@ -180,7 +182,7 @@ export const DisplayButton = styled.div`
   } 
 }
 :hover {
-  background-color: #222;
+  background-color: #6a4f23;
   color: #D9D9D9;
 }
 

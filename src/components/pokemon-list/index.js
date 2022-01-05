@@ -12,7 +12,6 @@ export const Pokemons = () => {
 
   useEffect(() => {
     getPokemons()
-    console.log(pokemon)
   }, [])
   return (
 
