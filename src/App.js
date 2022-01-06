@@ -12,6 +12,7 @@ import {
   MainHeader
 } from './elements/main'
 import Pokemons from './components/pokemon-list/index'
+import PokemonsInfo from './components/pokemon-info/index'
 
 const App = () => {
   return (
@@ -24,7 +25,7 @@ const App = () => {
           </PokedexHeader>
           <PokedexBody className='nes-container is-rounded'>
             <PokedexDisplay1> <Pokemons /></PokedexDisplay1>
-            <PokedexDisplay2> Working</PokedexDisplay2>
+            <PokedexDisplay2> <PokemonsInfo /></PokedexDisplay2>
 
           </PokedexBody>
         </PokedexBase>
