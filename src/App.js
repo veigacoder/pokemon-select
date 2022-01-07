@@ -1,15 +1,14 @@
-import {
-  PokedexBase,
-  PokedexHeader,
-  PokedexBody,
-  PokedexDisplay1,
-  PokedexDisplay2
-} from '../src/elements/pokedex-blocks'
 import 'nes.css/css/nes.min.css'
 import {
   Main,
   MainBody,
-  MainHeader
+  MainHeader,
+  PokedexBase,
+  PokedexHeader,
+  PokedexBody,
+  PokedexDisplay1,
+  PokedexDisplay2,
+  PokedexDisplayTools
 } from './elements/main'
 import Pokemons from './components/pokemon-list/index'
 import PokemonsInfo from './components/pokemon-info/index'
@@ -24,8 +23,9 @@ const App = () => {
             Pokémon Select v1.0
           </PokedexHeader>
           <PokedexBody className='nes-container is-rounded'>
-            <PokedexDisplay1> <Pokemons /></PokedexDisplay1>
-            <PokedexDisplay2> <PokemonsInfo /></PokedexDisplay2>
+            <PokedexDisplayTools className='nes-container is-rounded'> Tools</PokedexDisplayTools>
+            <PokedexDisplay1 className='nes-container is-rounded'> <Pokemons /></PokedexDisplay1>
+            <PokedexDisplay2 className='nes-container is-rounded'> <PokemonsInfo /></PokedexDisplay2>
 
           </PokedexBody>
         </PokedexBase>

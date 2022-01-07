@@ -1,9 +1,20 @@
 import { combineReducers } from 'redux'
-import { pokemonReducer, typeReducer } from './pokemonReducer'
+import {
+  photoReducer,
+  pokemonReducer,
+  typeReducer,
+  nameReducer,
+  idReducer,
+  evolutionReducer
+} from './pokemonReducer'
 
 const reducers = combineReducers({
   pokemons: pokemonReducer,
-  types: typeReducer
+  types: typeReducer,
+  name: nameReducer,
+  photo: photoReducer,
+  id: idReducer,
+  evolution: evolutionReducer
 })
 
 export default reducers

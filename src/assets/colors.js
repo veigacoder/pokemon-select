@@ -18,3 +18,16 @@ export const typeColors = {
   steel: '#D3FEFF',
   water: '#5966E3'
 }
+
+export const themeColors = [
+  {
+    red: {
+      base: '#8F5B5B',
+      basehighligth: '#BF9797'
+    },
+    golden: {
+      base: '#8F815B',
+      basehighlight: '#BFB497'
+    }
+  }
+]

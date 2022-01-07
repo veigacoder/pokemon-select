@@ -1,12 +1,16 @@
 *{
   image-rendering: pixelated;
+  color: #212529;
 }
 
 body {
   margin:0px;
   font-family: 'Press Start 2P', sans-serif;
 }
-
+ img {
+   outline: none;
+   border: none;
+ }
 ::-webkit-scrollbar {
   width: 10px;
  margin: 10px;
