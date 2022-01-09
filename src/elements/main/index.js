@@ -25,14 +25,14 @@ padding: 10px 0 10px 0;
 background-color: #2C2C2C;
 `
 export const PokedexBase = styled.div`
+&&{ 
 display: flex;
 flex-direction: column;
 margin-top: 10px;
 background-color: #AB4C4C;
 width: 100%;
 position: relative;
-&&{ 
-  margin: 15px
+margin: 15px
 }
 `
 export const PokedexHeader = styled.div`
@@ -51,23 +51,19 @@ justify-content: center ;
 align-items: center;
 background-color: #9E4949;
 text-align: center;
-&&{ 
-  padding: 5px;
-  @media (max-width: 1000px){
-  height: 100%;
-  } 
-}
+height: max-content;
 `
 export const PokedexDisplay1 = styled.div`
 &&{ 
   background-color: #212529;
   display: flex;
-  position: static;
+  position: relative;
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
   width: 512px;
   height: 512px;
+  max-height: auto;
   margin: 10px;
 }
 `

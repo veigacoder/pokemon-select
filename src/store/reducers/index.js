@@ -5,7 +5,8 @@ import {
   typeReducer,
   nameReducer,
   idReducer,
-  evolutionReducer
+  evolutionReducer,
+  searchReducer
 } from './pokemonReducer'
 
 const reducers = combineReducers({
@@ -14,7 +15,8 @@ const reducers = combineReducers({
   name: nameReducer,
   photo: photoReducer,
   id: idReducer,
-  evolution: evolutionReducer
+  evolution: evolutionReducer,
+  search: searchReducer
 })
 
 export default reducers

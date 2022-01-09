@@ -7,42 +7,63 @@ import {
   DisplayPokemonsNames,
   PokemonSearchBar,
   GridRow,
-  ActionButton
+  ActionButton,
+  GridColumn
 } from '../../elements/pokedex-display-1'
 import { actionCreators } from '../../store'
 
 export const Pokemons = () => {
   const pokemon = useSelector((state) => state)
   const dispatch = useDispatch()
-  const { getPokemons, getPokemon } = bindActionCreators(actionCreators, dispatch)
-
+  const {
+    getPokemons,
+    getPokemon,
+    getPokemonsIncrement,
+    getPokemonsDecrement
+  } = bindActionCreators(actionCreators, dispatch)
   useEffect(() => {
     getPokemons()
   }, [])
 
   return (
-    <>
+    <GridColumn>
       <GridRow>
         <PokemonSearchBar className='nes-container is-rounded' />
       </GridRow>
       <GridRow>
         <DisplayPokemonsNames>
-          {pokemon.pokemons.map(p =>
-            <React.Fragment key={p.id}>
-              <DisplayButton onClick={() => getPokemon(p.name)}>{p.name}</DisplayButton>
-            </React.Fragment>
-          )}
+          {pokemon.pokemons.loading
+            ? <DisplayButton>'loading'</DisplayButton>
+            : pokemon.pokemons.name.map(p =>
+              <React.Fragment key={p.id}>
+                <DisplayButton onClick={() => getPokemon(p.name)}>{p.name}</DisplayButton>
+              </React.Fragment>
+            )}
         </DisplayPokemonsNames>
       </GridRow>
       <GridRow>
-        <ActionButton>home</ActionButton>
-        <ActionButton>-</ActionButton>
-        <ActionButton>SEARCH</ActionButton>
-        <ActionButton>+</ActionButton>
+        <ActionButton onClick={() =>
+          getPokemons()}
+        >HOME
+        </ActionButton>
+        <ActionButton onClick={() =>
+          getPokemonsDecrement(
+            pokemon.search.values.limit,
+            pokemon.search.values.offset)}
+        >-
+        </ActionButton>
+        <ActionButton onClick={() => console.log(pokemon.search.values)}>SEARCH</ActionButton>
+        <ActionButton onClick={() =>
+          getPokemonsIncrement(
+            pokemon.search.values.limit,
+            pokemon.search.values.offset)}
+        >
+          +
+        </ActionButton>
         <ActionButton>+5</ActionButton>
 
       </GridRow>
-    </>
+    </GridColumn>
   )
 }
 

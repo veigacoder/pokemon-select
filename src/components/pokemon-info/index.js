@@ -1,8 +1,8 @@
 import 'nes.css/css/nes.min.css'
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { ActionButton, DisplayButton, PokemonType } from '../../elements/pokedex-display-1'
-import { DisplayPhoto, GridRow, GridColumn } from '../../elements/pokedex-display-2'
+import { ActionButton } from '../../elements/pokedex-display-1'
+import { DisplayPhoto, GridRow, GridColumn, PokemonType } from '../../elements/pokedex-display-2'
 
 export const PokemonsInfo = () => {
   const pokemon = useSelector((state) => state)
@@ -12,23 +12,27 @@ export const PokemonsInfo = () => {
       <GridColumn>
         <GridRow>
           <DisplayPhoto className='nes-container is-rounded'>
-            <img src={pokemon.photo.front_default} width='100%' height='100%' />
+            {
+            pokemon.photo
+              ? <img draggable='false' src={pokemon.photo.front_default} width='100%' height='100%' />
+              : ''
+            }
           </DisplayPhoto>
         </GridRow>
 
         <GridRow>
           <ActionButton>
-
-            {pokemon.evolution.name}
+            {`${pokemon.id} `}{pokemon.name}
           </ActionButton>
+
         </GridRow>
       </GridColumn>
 
       <GridColumn>
         <GridRow>
-          {pokemon.types.map(t =>
+          {pokemon.types.name.map(t =>
             <React.Fragment key={t.id}>
-              <PokemonType>{t.type.name}</PokemonType>
+              <PokemonType type={t.type.name}>{t.type.name}</PokemonType>
             </React.Fragment>)}
         </GridRow>
       </GridColumn>

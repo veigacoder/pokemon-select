@@ -19,13 +19,11 @@ align-self: center;
 `
 export const DisplayPokemonsNames = styled.div`
 &&{
-contain: content;
 display: grid;
-align-items: center;
-justify-content: center;
 grid-template-columns: repeat(4,1fr);
 padding: 0;
 margin: 0;
+height: fit-content;
 }
 `
 export const PokemonSearchBar = styled.input`
@@ -38,6 +36,7 @@ export const PokemonSearchBar = styled.input`
   padding: 10px;
   background-color: #8F815B;
   text-transform: uppercase;
+  position: relative;
 }
 `
 export const DisplayButton = styled.button`
@@ -47,24 +46,25 @@ export const DisplayButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  align-self: center;
+  align-self:  flex-start;
   min-height: max-content;
   background-color: #8F815B;
-  font-size: 9px;
-  padding: 10px;
+  font-size: 8px;
+  padding: 5px;
   margin: 5px;
-  height: auto;
-  width: auto;
+  height: 35px;
+  width: 100px;
   text-transform: uppercase;
   transition: all 300ms cubic-bezier(.27,1.16,0.1,-0.14);
-  @media (max-width: 1000px){
-  font-size: 6px;
-  padding: 5px;
-  } 
 }
 :hover {
   background-color: #BFB497;
 }
+-webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 `
 export const ActionButton = styled.button`
 &&{
@@ -86,26 +86,14 @@ export const ActionButton = styled.button`
   &+&{
     margin-left: 2px;
   }
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 `
-export const PokemonType = styled.div.attrs(props => ({
-  type: props.type || '#ddd'
-}))`
-&&{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
-  color: #121212;
-  background-color: ${props => props.type};
-  font-size: 8px;
-  padding: 5px;
-  height: max-content;
-  width: max-content;
-  text-transform: uppercase;
-  margin: 10px;
-}
-`
+
 export const GridRow = styled.div`
 &&{
 display: flex;
@@ -113,6 +101,20 @@ flex-direction: row;
 justify-content: center;
 align-items: center;
 width: 100%;
+height: auto;
+margin: 5px 0 5px 0;
+padding: 0;
+}
+`
+
+export const GridColumn = styled.div`
+&&{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+width: 100%;
+height: 100%;
 margin: 5px 0 5px 0;
 padding: 0;
 }
