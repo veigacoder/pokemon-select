@@ -19,6 +19,28 @@ export const typeColors = {
   water: '#5966E3'
 }
 
+export const ChooseType = (item) => {
+  if (item === 'bug') return typeColors.bug
+  if (item === 'dark') return typeColors.dark
+  if (item === 'dragon') return typeColors.dragon
+  if (item === 'electric') return typeColors.electric
+  if (item === 'fairy') return typeColors.fairy
+  if (item === 'fight') return typeColors.fight
+  if (item === 'fighting') return typeColors.fighting
+  if (item === 'fire') return typeColors.fire
+  if (item === 'flying') return typeColors.flying
+  if (item === 'ghost') return typeColors.ghost
+  if (item === 'grass') return typeColors.grass
+  if (item === 'ground') return typeColors.ground
+  if (item === 'ice') return typeColors.ice
+  if (item === 'normal') return typeColors.normal
+  if (item === 'poison') return typeColors.poison
+  if (item === 'psychic') return typeColors.psychic
+  if (item === 'rock') return typeColors.rock
+  if (item === 'steel') return typeColors.steel
+  if (item === 'water') return typeColors.water
+}
+
 export const themeColors = [
   {
     red: {
