@@ -1,5 +1,4 @@
 *{
-  image-rendering: pixelated;
   color: #212529;
 }
 
@@ -7,16 +6,7 @@ body {
   margin:0px;
   font-family: 'Press Start 2P', sans-serif;
 }
- img {
-   outline: none;
-   border: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-  pointer-events: none;
- }
+
 ::-webkit-scrollbar {
   width: 10px;
  margin: 10px;
@@ -35,9 +25,4 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 
-}
-
-img {
-  outline: none;
-  border: none;
 }

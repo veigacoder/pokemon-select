@@ -1,22 +1,5 @@
 import styled from 'styled-components'
 
-export const DisplayPhoto = styled.div`
-color: wheat;
-background-color: #A9A9A9;
-height: 128px;
-width:  128px;
-background-size: 200px;
-overflow: none;
-align-self: center;
-
-&&{
-  padding: 0;
-  @media (max-width: 1000px){
-  height: 40%;
-  width: 40%;
-  } 
-}
-`
 export const DisplayPokemonsNames = styled.div`
 &&{
 display: grid;
@@ -75,8 +58,8 @@ export const ActionButton = styled.button`
   align-items: center;
   align-self: center;
   min-height: max-content;
-  background-color: #fff;
-  color: #000;
+  background-color: #B6C5D6;
+  color: black;
   font-size: 8px;
   padding: 5px;
   height: auto;

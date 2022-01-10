@@ -5,6 +5,7 @@ background-color: #2C2C2C;
 height: max-content;
 min-height: 100%;
 width: 100%;
+min-width: max-content;
 top:0px;
 right:0px;
 bottom:0px;
@@ -30,7 +31,8 @@ display: flex;
 flex-direction: column;
 margin-top: 10px;
 background-color: #AB4C4C;
-width: 100%;
+height: max-content;
+width: max-content;
 position: relative;
 margin: 15px
 }
@@ -52,6 +54,7 @@ align-items: center;
 background-color: #9E4949;
 text-align: center;
 height: max-content;
+width: max-content;
 `
 export const PokedexDisplay1 = styled.div`
 &&{ 
@@ -90,6 +93,7 @@ text-align: left;
 justify-content: center;
 padding: 10px;
 width: 96px;
+min-width: fit-content;
 height: 512px;
 margin: 10px;
 }
